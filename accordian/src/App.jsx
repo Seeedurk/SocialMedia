@@ -3,15 +3,6 @@ import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import './App.css'  
 
-/*
-To do:
-Make the text of the products wrap
-make the website look good
-create a database to save accounts and save orders
-add cart functionality
-figure out how to organize products
-AI wrapper??
-*/
 
 
 // Page components
@@ -160,12 +151,14 @@ function App() {
         fetch('https://fakestoreapi.com/products')
             .then(response => response.json())
             .then(data => setProducts(data));
-    }, []);
-    /*    useEffect(() => {
+    }, []); 
+    /*
+        useEffect(() => {
         axios.get('http://localhost:5000/api/products')
             .then(res => setProducts(res.data))
             .catch(err => console.error('Frontend error:', err));
-    }, []); */
+    }, []); 
+    */
 
     return (
         

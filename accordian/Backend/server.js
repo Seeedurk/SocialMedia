@@ -15,6 +15,7 @@ app.get('/api/products', async (req, res) => {
     try {
         const response = await axios.get('https://fakestoreapi.com/products');
         res.json(response.data);
+        console.log(res.data);
     } catch (error) {
         console.error('Error fetching products:', error.message);
         res.status(500).json({ error: 'Failed to fetch products' });
