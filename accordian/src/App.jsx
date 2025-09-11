@@ -156,16 +156,16 @@ function ChatAssistant() {
 function App() {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
-    useEffect(() => {
+    /*useEffect(() => {
         fetch('https://fakestoreapi.com/products')
             .then(response => response.json())
             .then(data => setProducts(data));
-    }, []);
-    /*    useEffect(() => {
+    }, []);*/
+        useEffect(() => {
         axios.get('http://localhost:5000/api/products')
             .then(res => setProducts(res.data))
             .catch(err => console.error('Frontend error:', err));
-    }, []); */
+    }, []); 
 
     return (
         
