@@ -1,4 +1,20 @@
 import express from 'express';
+
+const app = express();
+
+console.log('🚀 server.js loaded');
+
+app.get('/ping', (req, res) => {
+  console.log('🔔 /ping route hit');
+  res.send('pong');
+});
+
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => {
+  console.log(`✅ Server listening on port ${PORT}`);
+});
+
+/*(import express from 'express';
 import axios from 'axios';
 import bodyParser from 'body-parser';
 import { parse } from 'url';
@@ -34,5 +50,5 @@ app.get('/ping', (req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
-});
+}); */
 
