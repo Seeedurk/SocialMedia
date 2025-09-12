@@ -18,56 +18,33 @@ app.get('/api', (req, res) => {
 
 // Products route
 app.get('/api/products', async (req, res) => {
-  try {
-    console.log('✅ /api/products route was hit');
-    const response = await axios.get('https://dummyjson.com/products', {
-      headers: {
-        'User-Agent': 'Render-Server',
-        'Accept': 'application/json',
-      }
-    });
-    res.json(response.data.products); // Send only the array of products
-  } catch (error) {
-    console.error('❌ Error fetching products:', {
-      message: error.message,
-      code: error.code,
-      status: error.response?.status,
-      data: error.response?.data,
-    });
-    res.status(500).json({ error: 'Failed to fetch products' });
-  }
+    try {
+        const response = await axios.get('https://dummyjson.com/products', {
+            headers: {
+                'User-Agent': 'Render-Server',
+                'Accept': 'application/json',
+            }
+        });
+
+        const normalized = response.data.products.map(product => ({
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            image: product.images?.[0] || 'https://via.placeholder.com/100',
+        }));
+
+        res.json(normalized);
+    } catch (error) {
+        console.error('❌ Error fetching products:', {
+            message: error.message,
+            code: error.code,
+            status: error.response?.status,
+            data: error.response?.data,
+        });
+        res.status(500).json({ error: 'Failed to fetch products' });
+    }
 });
 
-app.get('/ping', (req, res) => {
-  console.log('🔔 /ping route hit');
-  res.send('pong');
-});
-app.get('/api/test-outbound', async (req, res) => {
-  try {
-    console.log('🔍 Testing outbound access...');
-    const response = await axios.get('https://jsonplaceholder.typicode.com/posts/1');
-    res.json({
-      status: 'success',
-      source: 'jsonplaceholder',
-      data: response.data,
-    });
-  } catch (error) {
-    console.error('❌ Outbound test failed:', {
-      message: error.message,
-      code: error.code,
-      status: error.response?.status,
-      headers: error.response?.headers,
-      data: error.response?.data,
-    });
-    res.status(500).json({
-      status: 'error',
-      message: error.message,
-      code: error.code,
-      status: error.response?.status,
-      data: error.response?.data,
-    });
-  }
-});
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

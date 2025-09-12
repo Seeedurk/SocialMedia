@@ -151,7 +151,7 @@ function App() {
     const API_URL = import.meta.env.VITE_API_URL;
     /*
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
+        fetch('https://dummyjson.com/products')
             .then(response => response.json())
             .then(data => setProducts(data));
     }, []); 
