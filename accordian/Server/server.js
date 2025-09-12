@@ -20,10 +20,21 @@ app.get('/api', (req, res) => {
 app.get('/api/products', async (req, res) => {
   try {
     console.log('✅ /api/products route was hit');
-    const response = await axios.get('https://fakestoreapi.com/products', {
-  headers: {
-    'User-Agent': 'Render-Server',
-    'Accept': 'application/json',
+    const response = await axios.get('https://dummyjson.com/products', {
+      headers: {
+        'User-Agent': 'Render-Server',
+        'Accept': 'application/json',
+      }
+    });
+    res.json(response.data.products); // Extract the array of products
+  } catch (error) {
+    console.error('❌ Error fetching products:', {
+      message: error.message,
+      code: error.code,
+      status: error.response?.status,
+      data: error.response?.data,
+    });
+    res.status(500).json({ error: 'Failed to fetch products' });
   }
 });
 
