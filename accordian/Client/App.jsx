@@ -8,11 +8,13 @@ import './App.css'
 // Page components
 function Home() {
     const [data, setData] = useState(null);
+    const API_URL = import.meta.env.VITE_API_URL;
 
     useEffect(() => {
-        fetch('/api')
-            .then(res => res.json())
-            .then(data => setData(data.message))
+        const API_URL = import.meta.env.VITE_API_URL;
+
+        axios.get(`${API_URL}/api`)
+            .then(res => setData(res.data.message))
             .catch(err => console.error('Connection error:', err));
     }, []);
 
@@ -146,6 +148,7 @@ function ChatAssistant() {
 function App() {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
+    const API_URL = import.meta.env.VITE_API_URL;
     /*
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
@@ -154,7 +157,7 @@ function App() {
     }, []); 
     */
         useEffect(() => {
-        axios.get('/api/products')
+            axios.get(`${API_URL}/api/products`)
             .then(res => setProducts(res.data))
             .catch(err => console.error('Frontend error:', err));
     }, []); 
