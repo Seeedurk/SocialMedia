@@ -39,4 +39,3 @@ app.listen(PORT, () => {
 console.log('🧭 Registered routes:', app._router.stack
   .filter(r => r.route)
   .map(r => r.route.path));
-🧭 Registered routes: [ '/api/products', '/ping' ]
