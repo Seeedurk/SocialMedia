@@ -6,6 +6,9 @@ console.log('🚀 server.js loaded');
 
 app.get('/ping', (req, res) => {
   console.log('🔔 /ping route hit');
+  setTimeout(() => {
+    console.log('⏳ Log after delay');
+  }, 1000);
   res.send('pong');
 });
 
