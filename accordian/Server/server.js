@@ -26,7 +26,7 @@ app.get('/api/products', async (req, res) => {
         'Accept': 'application/json',
       }
     });
-    res.json(response.data.products); // Extract the array of products
+    res.json(response.data.products); // Send only the array of products
   } catch (error) {
     console.error('❌ Error fetching products:', {
       message: error.message,
@@ -38,12 +38,6 @@ app.get('/api/products', async (req, res) => {
   }
 });
 
-    res.json(response.data);
-  } catch (error) {
-    console.error('Error fetching products:', error.message);
-    res.status(500).json({ error: 'Failed to fetch products' });
-  }
-});
 app.get('/ping', (req, res) => {
   console.log('🔔 /ping route hit');
   res.send('pong');
