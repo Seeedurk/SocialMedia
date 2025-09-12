@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import { parse } from 'url';
 import cors from 'cors';
 
+console.log('🚀 server.js loaded');
 
 const app = express();
 app.use(cors({ origin: 'http://localhost:50334' }));
