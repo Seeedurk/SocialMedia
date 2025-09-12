@@ -7,7 +7,7 @@ import cors from 'cors';
 console.log('🚀 server.js loaded');
 
 const app = express();
-app.use(cors({ origin: 'http://localhost:50334' }));
+app.use(cors({ origin: 'https://commerce-1-1nc0.onrender.com' }));
 
 app.use(bodyParser.json());
 // Root route
