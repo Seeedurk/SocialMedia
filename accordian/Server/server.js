@@ -18,6 +18,7 @@ app.get('/api', (req, res) => {
 // Products route
 app.get('/api/products', async (req, res) => {
   try {
+    console.log('✅ /api/products route was hit');
     const response = await axios.get('https://fakestoreapi.com/products');
     res.json(response.data);
   } catch (error) {
