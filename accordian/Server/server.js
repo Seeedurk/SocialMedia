@@ -20,7 +20,13 @@ app.get('/api', (req, res) => {
 app.get('/api/products', async (req, res) => {
   try {
     console.log('✅ /api/products route was hit');
-    const response = await axios.get('https://fakestoreapi.com/products');
+    const response = await axios.get('https://fakestoreapi.com/products', {
+  headers: {
+    'User-Agent': 'Render-Server',
+    'Accept': 'application/json',
+  }
+});
+
     res.json(response.data);
   } catch (error) {
     console.error('Error fetching products:', error.message);
