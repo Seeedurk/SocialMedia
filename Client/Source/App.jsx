@@ -56,12 +56,9 @@ function App() {
                 <Navigation />
                 <div className="menu">
                     <div>
-                        <button>
-                            <h2>Sedrik Punzalan</h2>
-                            <MyFunctionComponent />
-
-                        </button>
-
+                       <h2>Sedrik Punzalan</h2>
+                    </div>
+                    <div>
                         <button>
                             Notifications
 
@@ -71,9 +68,7 @@ function App() {
                             Messages
 
                         </button>
-                    </div>
-                    <div>
-                    Settings
+
                     </div>
                 </div>
 

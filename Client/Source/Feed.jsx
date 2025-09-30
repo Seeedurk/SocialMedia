@@ -41,9 +41,6 @@ function Feed() {
             </div>
             <div className="text">
                 <h3>Gavin Mangubat</h3>
-                <p>Proffessional gooner, last girlfrield a milennoa ago,tu gooning menace</p>
-
-                #Impoverished #Single #LookingForLove #Gooner #FloodEscaper #Proffessional
 
 
             </div>
