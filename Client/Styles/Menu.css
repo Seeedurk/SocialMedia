@@ -1,0 +1,33 @@
+.menu {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	background-color: #333;
+	width: 15%;
+	gap: 100px;
+	left: 183px;
+	top: 59px;
+	height: auto;
+	padding: 0.5rem 1rem;
+	z-index: 1000;
+	position: fixed;
+	color: white;
+	border: none;
+}
+
+	.menu button {
+		color: white;
+		background-color: black;
+		border-bottom: solid 1px white;
+	}
+
+	.menu div {
+		display: flex;
+		flex-direction: column;
+		color: white;
+		background-color: black;
+		border: none;
+		border: solid 1px white;
+		border-radius: 20px;
+		gap: 30px;
+	}

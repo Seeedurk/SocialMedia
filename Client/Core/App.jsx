@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import './App.css'  
-import Feed from './Feed.jsx';
-import Navigation from './navigation.jsx'
-
+import '../Styles/App.css';
+import Feed from '../Pages/Feed.jsx';
+import Navigation from '../Pages/navigation.jsx'
+import Menu from '../Components/menu.jsx'
+import Friends from '../Components/friends-list.jsx';
 
 
 // Page components
@@ -54,42 +55,10 @@ function App() {
             
             <div className="main-div" >
                 <Navigation />
-                <div className="menu">
-                    <div>
-                       <h2>Sedrik Punzalan</h2>
-                    </div>
-                    <div>
-                        <button>
-                            Notifications
 
-                        </button>
+                <Menu />
 
-                        <button>
-                            Messages
-
-                        </button>
-
-                    </div>
-                </div>
-
-
-                <div className="friends-list">
-                    <div>
-                        <h2>Friends List</h2>
-                        <button>
-                            Your Goober Hb
-
-                        </button>
-
-                        <button>
-                            The Gooner
-
-                        </button>
-                    </div>
-                    <div>
-                    add friends
-                    </div>
-                </div>
+                <Friends />
 
             </div>
             
