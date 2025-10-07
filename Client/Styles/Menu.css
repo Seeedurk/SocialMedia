@@ -3,14 +3,13 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	background-color: #333;
-	width: 15%;
-	gap: 100px;
-	left: 183px;
-	top: 59px;
-	height: auto;
+	width: 20%;
+	gap: 75px;
+	top: 10%;
+	height: 35%;
 	padding: 0.5rem 1rem;
 	z-index: 1000;
-	position: fixed;
+	position: sticky;
 	color: white;
 	border: none;
 }

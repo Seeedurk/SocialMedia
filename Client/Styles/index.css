@@ -5,7 +5,7 @@
   
   color-scheme: light dark;
   color: rgba(0, 0, 0, 0.87);
-  background-color: black; /*controls background color*/
+  background-color: #333; /*controls background color*/
   color: white;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -29,7 +29,7 @@ body {
   place-items: center;
   width: 100vw;
   height: 100vw;
-  background-color: black;
+  background-color: #333; /*controls color of margins between background and main div*/
   color: white;
 }
 

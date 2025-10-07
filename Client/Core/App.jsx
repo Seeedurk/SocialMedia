@@ -2,13 +2,11 @@ import { useState, useEffect } from 'react'
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import '../Styles/App.css';
-import Feed from '../Pages/Feed.jsx';
-import Navigation from '../Pages/navigation.jsx'
-import Menu from '../Components/menu.jsx'
-import Friends from '../Components/friends-list.jsx';
+import Navigation from '../Components/navigation.jsx'
 
 
-// Page components
+
+// I should really move the navigation routes into the main
 function Home() {
     const [data, setData] = useState(null);
     const API_URL = import.meta.env.VITE_API_URL;
@@ -51,16 +49,7 @@ function App() {
     
     return (
         <>
-           
-            
-            <div className="main-div" >
-                <Navigation />
-
-                <Menu />
-
-                <Friends />
-
-            </div>
+            <Navigation />
             
         </>
        

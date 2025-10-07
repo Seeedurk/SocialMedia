@@ -1,4 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
+import Text from '../Components/text.jsx'
+import Menu from '../Components/menu.jsx'
+import Friends from '../Components/friends-list.jsx';
 import '../Styles/App.css';
 
 function Feed() {
@@ -24,26 +27,21 @@ function Feed() {
         </div>
     );
     */
+
 	return (
-		<>
-            <div className="text">
-                <h1>Basic Chat Feed</h1>
-                There would be some text here!
-            </div>
-            <div className="text">
-                <h3>Andre Quesada</h3>
-                <p>Yo im looking for a partner, preferrably a girl but ill settle for a guy, hit me up if youre interested
-                    Im currently a proffessional gooner and flood escaper.</p>
+        <>
+            <div className="main-div" >
+                <Menu />
 
-                #Impoverished #Single #LookingForLove #Gooner #FloodEscaper #Proffessional  
+                <Text />
 
+
+                <Friends />
+    
 
             </div>
-            <div className="text">
-                <h3>Gavin Mangubat</h3>
 
-
-            </div>
+     
 		</>
 		
 	);

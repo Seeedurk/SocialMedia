@@ -1,7 +1,11 @@
 import react from 'react';
-import Feed from './Feed.jsx';
+import Feed from '../Pages/Feed.jsx';
+import Contact from '../Pages/Contact.jsx';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import logo from '../assets/logo.jpg';
+import '../Styles/App.css';
+
+
 function navigation() {
     return (
         <Router>
@@ -20,6 +24,7 @@ function navigation() {
             </nav>
                 <Routes>
                     <Route path="/" element={<Feed />} />
+                    <Route path="/Contact" element={<Contact />} />
                 </Routes>
             </Router>
 
