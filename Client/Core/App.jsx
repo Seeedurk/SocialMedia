@@ -11,6 +11,7 @@ function Home() {
     const [data, setData] = useState(null);
     const API_URL = import.meta.env.VITE_API_URL;
 
+    /*
     useEffect(() => {
         const API_URL = import.meta.env.VITE_API_URL;
         axios.get(`${API_URL}/api`)
@@ -18,7 +19,7 @@ function Home() {
             .catch(err => console.error('Connection error:', err));
     }, []);
 
-
+    */
 
     return (
         <div className="divin">
@@ -40,13 +41,14 @@ function MyFunctionComponent() {
 function App() {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
+    /*
     const API_URL = import.meta.env.VITE_API_URL;
         useEffect(() => {
             axios.get(`${API_URL}/api/products`)
             .then(res => setProducts(res.data))
             .catch(err => console.error('Frontend error:', err));
     }, []); 
-    
+    */
     return (
         <>
             <Navigation />

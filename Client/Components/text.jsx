@@ -10,10 +10,12 @@ function text() {
         text: "Hello, I'm looking for a partner to join me on my adventures. I'm a skilled warrior and a loyal companion. If you're interested, please reach out to me! #Adventurer #PartnerWanted"
     }
     ]);
-    
+
+
+
     useEffect(() => {
         
-        socket.emit("get_posts");
+        socket.emit("init_posts");
         const Handler = (posts) => {
             if (!exploded.current) {
                 setPosts(prev => [...prev, ...JSON.parse(posts)]);
@@ -21,13 +23,20 @@ function text() {
             }
 
         }
+        const Render = (data) => {
+            setPosts(JSON.parse(data));
+            console.log(Posts);
+        }
         socket.on("post_response", Handler);
+        socket.on("Render_response", Render);
         return () => {
             socket.off("post_response", Handler);
+            socket.off("Render_response", Render);
         };
 
     }, [])
-    
+
+
 
     return (
         <div className='div-text'>

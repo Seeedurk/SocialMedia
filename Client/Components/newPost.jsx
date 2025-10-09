@@ -11,10 +11,11 @@ function newPost(props) {
 			user: "Sedrik",
 			text:  postText 
 		}
-		props.setPosts(prev => [newPost, ...prev]);
+
 		socket.emit("new_post", newPost);
 		setPostText('');
 	}
+
 	return(
 		<div className='post-text'>
 			Create Post
