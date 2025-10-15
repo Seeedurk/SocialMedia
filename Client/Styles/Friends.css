@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: flex-start;
     background-color: #333;
+    min-width: auto;
     width: 20%;
     gap: 100px;
     margin-top: 5%; /*Figure out how to change so that Friends list and menu can be on the same level without screwing up mobile viewport*/
@@ -10,7 +11,7 @@
     padding: 0.5rem 1rem; /*figure out how to make titles like friends list start at the top of the div*/
     color: white;
     border: none;
-
+    font-size: 1vw;
 }
 
     .friends-list button {

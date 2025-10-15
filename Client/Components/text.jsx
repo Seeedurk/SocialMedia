@@ -5,33 +5,34 @@ import socket from './Socket.js';
 
 function text() {
     const exploded = useRef(false);
-    const [Posts, setPosts] = useState([{
-        user: "Sedrik",
-        text: "Hello, I'm looking for a partner to join me on my adventures. I'm a skilled warrior and a loyal companion. If you're interested, please reach out to me! #Adventurer #PartnerWanted"
-    }
+    const [Posts, setPosts] = useState([
     ]);
 
 
 
     useEffect(() => {
-        
-        socket.emit("init_posts");
-        const Handler = (posts) => {
+
+        const responseHandler = (posts) => {
             if (!exploded.current) {
                 setPosts(prev => [...prev, ...JSON.parse(posts)]);
                 exploded.current = true;
             }
 
         }
-        const Render = (data) => {
+
+        const renderHandler = (data) => {
             setPosts(JSON.parse(data));
             console.log(Posts);
         }
-        socket.on("post_response", Handler);
-        socket.on("Render_response", Render);
+
+        socket.emit("init_posts");
+
+        socket.on("post_response", responseHandler);
+        socket.on("Render_response", renderHandler);
         return () => {
-            socket.off("post_response", Handler);
-            socket.off("Render_response", Render);
+            socket.off("post_response", responseHandler);
+            socket.off("Render_response", renderHandler);
+            
         };
 
     }, [])
@@ -62,7 +63,7 @@ function text() {
             </div>
             <div className="text">
                 <h3>Gavin Mangubat</h3>
-
+                Homsapien
 
             </div>
         
