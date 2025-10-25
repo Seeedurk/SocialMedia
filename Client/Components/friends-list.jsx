@@ -5,6 +5,7 @@ function Friends() {
         <div className="friends-list">
             <div>
                 <h2>Friends List</h2>
+                work in progress!
                 <button>
                     Your Goober Hb
 

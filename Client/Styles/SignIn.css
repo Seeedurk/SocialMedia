@@ -1,0 +1,47 @@
+.Page-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 50px;
+    background: #333;
+    color: white !important;
+    font-size: 20px;
+    padding: 16px 20px;
+    height: 40%;
+    width: 25%;
+    border: none;
+
+}
+.Sign-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 50px;
+    background: black;
+    color: white !important;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 16px 20px;
+    height: 40%;
+    width: 75%;
+    gap: 10%
+}
+    .Sign-in input {
+        background: black;
+        color: white !important;
+        border: solid white 0.5px;
+        border-radius: 20px;
+    }
+    .Sign-in button {
+        background: black;
+        color: white !important;
+        border: solid white 0.5px;
+        border-radius: 20px;
+        height: 20%;
+        width: 30%;
+
+        padding: 0;
+    }

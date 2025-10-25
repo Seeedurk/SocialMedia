@@ -57,7 +57,6 @@ function text() {
                 <p>Yo im looking for a partner, preferrably a girl but ill settle for a guy, hit me up if youre interested
                     Im currently a proffessional gooner and flood escaper.</p>
 
-                #Impoverished #Single #LookingForLove #Gooner #FloodEscaper #Proffessional
 
 
             </div>

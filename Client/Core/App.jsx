@@ -10,7 +10,7 @@ import Navigation from '../Components/navigation.jsx'
 function Home() {
     const [data, setData] = useState(null);
     const API_URL = import.meta.env.VITE_API_URL;
-
+    
     /*
     useEffect(() => {
         const API_URL = import.meta.env.VITE_API_URL;
@@ -39,8 +39,7 @@ function MyFunctionComponent() {
 
 
 function App() {
-    const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState([]);
+    const [user, setUser] = useState("Anonymous Viewer");
     /*
     const API_URL = import.meta.env.VITE_API_URL;
         useEffect(() => {
@@ -51,7 +50,7 @@ function App() {
     */
     return (
         <>
-            <Navigation />
+            <Navigation user={user} setUser={setUser} />
             
         </>
        

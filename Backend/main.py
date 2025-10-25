@@ -2,18 +2,36 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 from flask_socketio import SocketIO, emit
 from flask_sqlalchemy import SQLAlchemy
+
 import logging
 import json
+
+import os 
+from dotenv import load_dotenv, find_dotenv
+
+env_path = find_dotenv()
+if not env_path:    
+    candidate = os.path.join(os.path.dirname(__file__), '..', 'Client', '.env')
+    if os.path.exists(candidate):
+        env_path = candidate
+if env_path:
+    load_dotenv(env_path)
+
+db_password = os.getenv('DB_PASSWORD')
 
 #Extremely important commands
 
 #& "C:\Program Files\PostgreSQL\18\bin\psql.exe" -U postgres -p 4000
+# cd C:/users/Sedri/Projects/SocialMedia/Client
+# cd C:/users/Sedri/Projects/SocialMedia/Backend
+
 #TRUNCATE TABLE message RESTART IDENTITY;
 #db.session.add(Message(user = "Sedrik", text = "Hello from all the way in the database!"))
 #db.session.commit()
 
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
+
 
 
 users = [
@@ -41,9 +59,8 @@ CORS(app)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 db = SQLAlchemy()
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:13071418@localhost:4000/testdb'
+app.config['SQLALCHEMY_DATABASE_URI'] = f"postgresql://postgres:{db_password}@localhost:4000/testdb"
 db.init_app(app)
-
 
 #Database Modelling
 class Message(db.Model):
@@ -51,11 +68,15 @@ class Message(db.Model):
     user = db.Column(db.String(50), nullable=False)
     text = db.Column(db.String(500), nullable=False)
    
-
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    userName = db.Column(db.String(50), nullable=False)
 
 def create_database():
     with app.app_context():
         db.create_all()
+        db.session.add(User(userName = "Andre"))
+        db.session.commit()
 
         
 
@@ -99,7 +120,9 @@ if __name__ == '__main__':
     import os
     if os.environ.get("WERKZEUG_RUN_MAIN") == "true":
         create_database()
-        
+        print("Loaded DB_PASSWORD:", os.getenv('DB_PASSWORD'))
+
+    
     socketio.run(app, port=5000, debug=True)
 
 

@@ -1,17 +1,22 @@
 .text {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-content: flex-start;
-    margin-top: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 18px auto;
+    line-height: 1.6;
     background: black;
     color: white !important;
     font-size: 20px;
     text-wrap: wrap;
-    border: solid white 0.5px;
-    border-radius: 20px;
-    padding-top: 0px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 16px 20px;
+    word-wrap: break-word;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
+
+
 .div-text {
     height: auto;
     width: 40%;

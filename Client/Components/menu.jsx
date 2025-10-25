@@ -1,13 +1,16 @@
 import React from 'react';
 import '../Styles/Menu.css';  
 
-function Menu() {
+function Menu(props) {
     return (
         <div className="menu">
             <div>
-                <h2>Sedrik Punzalan</h2>
+                <h2>{props.user}</h2>
             </div>
             <div>
+                <button>
+                    Work in progress!
+                </button>
                 <button>
                     Notifications
 
