@@ -4,7 +4,8 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 
-# User-specific files
+# User-specific files.
+.env
 *.rsuser
 *.suo
 *.user
@@ -363,3 +364,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /server.js
+/.gitignore
