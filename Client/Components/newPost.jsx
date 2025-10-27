@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import '../Styles/text.css';
 import socket from './Socket.js';
 function newPost(props) {
-	const [postText, setPostText] = useState('Make some text here dweeb!');
+	const [postText, setPostText] = useState('Make some text here nice person!');
 	function onChangeHandler(event) {
 		setPostText(event.target.value);
 	}

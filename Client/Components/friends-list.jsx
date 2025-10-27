@@ -7,12 +7,12 @@ function Friends() {
                 <h2>Friends List</h2>
                 work in progress!
                 <button>
-                    Your Goober Hb
+                    Your Best Friend
 
                 </button>
 
                 <button>
-                    The Gooner
+                    A Friend
 
                 </button>
             </div>

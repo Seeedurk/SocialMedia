@@ -53,16 +53,10 @@ function text() {
             )};
 
             <div className="text">
-                <h3>Andre Quesada</h3>
-                <p>Yo im looking for a partner, preferrably a girl but ill settle for a guy, hit me up if youre interested
-                    Im currently a proffessional gooner and flood escaper.</p>
+                <h3>Developer</h3>
+                <p>Use the box above to create the very first Post</p>
 
 
-
-            </div>
-            <div className="text">
-                <h3>Gavin Mangubat</h3>
-                Homsapien
 
             </div>
         
