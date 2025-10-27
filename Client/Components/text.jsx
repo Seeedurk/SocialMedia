@@ -3,7 +3,7 @@ import NewPost from './newPost.jsx'
 import '../Styles/text.css';
 import socket from './Socket.js';
 
-function text() {
+function text(props) {
     const exploded = useRef(false);
     const [Posts, setPosts] = useState([
     ]);
@@ -42,7 +42,7 @@ function text() {
     return (
         <div className='div-text'>
 
-            <NewPost setPosts={setPosts} />
+            <NewPost user={props.user}  setPosts={setPosts} />
 
             {Posts.map(post => (
                 <div className="text">

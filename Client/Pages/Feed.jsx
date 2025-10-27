@@ -11,7 +11,7 @@ function Feed(props) {
             <div className="main-div" >
                 <Menu user={props.user} />
 
-                <Text />
+                <Text user={props.user} />
 
 
                 <Friends />

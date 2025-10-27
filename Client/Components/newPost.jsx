@@ -8,7 +8,7 @@ function newPost(props) {
 	}
 	function onClickHandler() {
 		const newPost = {
-			user: "Sedrik",
+			user: props.user,
 			text:  postText 
 		}
 
