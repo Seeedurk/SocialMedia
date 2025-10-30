@@ -44,6 +44,10 @@ function text(props) {
 
             <NewPost user={props.user}  setPosts={setPosts} />
 
+            <div className="text">
+                The backend winds down after some time, so give it time to start up again if posts aren't showing up
+            </div>
+
             {Posts.map(post => (
                 <div className="text">
                     <h3>{post.user}</h3>
@@ -51,6 +55,7 @@ function text(props) {
                 </div>
                 )
             )};
+
 
             <div className="text">
                 <h3>Developer</h3>

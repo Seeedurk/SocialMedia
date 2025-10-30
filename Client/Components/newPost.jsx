@@ -19,10 +19,12 @@ function newPost(props) {
 	return(
 		<div className='post-text'>
 			Create Post
+			
 			<div className='post-div'>
 				<input value={postText} onChange={onChangeHandler} />
 				<button onClick={onClickHandler}>Post</button>
 			</div>
+
         </div>
 
 	);
