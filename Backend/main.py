@@ -1,5 +1,6 @@
-import eventlet
-eventlet.monkey_patch()
+from gevent import monkey
+monkey.patch_all()
+
 
 from flask import Flask, jsonify, request
 from flask_cors import CORS
@@ -59,7 +60,7 @@ Posts = [{
 
 app = Flask(__name__)
 CORS(app)
-socketio = SocketIO(app, cors_allowed_origins="*", async_mode='eventlet')
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode='gevent')
 socketio_app = app
 
 
