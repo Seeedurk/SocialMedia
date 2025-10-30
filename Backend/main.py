@@ -124,6 +124,14 @@ def new_post(data):
     for message in Message.query.order_by(Message.id.desc()).all()]
     emit('Render_response', json.dumps(Posts), broadcast=True)
 
+@app.route('/init-db')
+def init_db():
+    with app.app_context():
+        db.create_all()
+        db.session.add(User(userName="Andre"))
+        db.session.commit()
+    return "Database initialized!"
+
 
 
 if __name__ == '__main__':
