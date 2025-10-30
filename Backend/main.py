@@ -58,11 +58,16 @@ app = Flask(__name__)
 CORS(app)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
-db = SQLAlchemy()
+
+
 app.config['SQLALCHEMY_DATABASE_URI'] = f"postgresql://postgres:{db_password}@localhost:4000/testdb"
-db.init_app(app)
+db = SQLAlchemy(app)
 
 #Database Modelling
+
+
+
+
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user = db.Column(db.String(50), nullable=False)
@@ -116,10 +121,13 @@ def new_post(data):
     emit('Render_response', json.dumps(Posts), broadcast=True)
 
 
+with app.app_context():
+    create_database()
+
+
 if __name__ == '__main__':
     import os
     if os.environ.get("WERKZEUG_RUN_MAIN") == "true":
-        create_database()
         print("Loaded DB_PASSWORD:", os.getenv('DB_PASSWORD'))
 
     
