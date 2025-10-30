@@ -17,7 +17,7 @@ if not env_path:
 if env_path:
     load_dotenv(env_path)
 
-db_password = os.getenv('DB_PASSWORD')
+database_url = os.getenv('DATABASE_URL')
 
 #Extremely important commands
 
@@ -60,7 +60,7 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = f"postgresql://postgres:{db_password}@localhost:4000/testdb"
+app.config['SQLALCHEMY_DATABASE_URI'] = f"{database_url}"
 db = SQLAlchemy(app)
 
 #Database Modelling
@@ -122,15 +122,15 @@ def new_post(data):
     emit('Render_response', json.dumps(Posts), broadcast=True)
 
 
-with app.app_context():
-    print("Database created")
-    create_database()
-
 
 if __name__ == '__main__':
     import os
     if os.environ.get("WERKZEUG_RUN_MAIN") == "true":
         print("Loaded DB_PASSWORD:", os.getenv('DB_PASSWORD'))
+        with app.app_context():
+            print("Creating database...")
+            create_database()
+
 
     
     socketio.run(app, port=5000, debug=True)
