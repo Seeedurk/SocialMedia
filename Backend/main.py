@@ -106,6 +106,7 @@ def retrieve_data(data):
 
 @socketio.on('init_posts')
 def handle_post():
+    print("Initializing Posts")
     Posts = [{"user": message.user, "text": message.text}
     for message in Message.query.order_by(Message.id.desc()).all()]
     emit('post_response', json.dumps(Posts))
@@ -122,6 +123,7 @@ def new_post(data):
 
 
 with app.app_context():
+    print("Database created")
     create_database()
 
 

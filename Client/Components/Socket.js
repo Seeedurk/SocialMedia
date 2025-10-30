@@ -1,3 +1,4 @@
 import { io } from 'socket.io-client';  
-const socket = io('http://localhost:5000');
+console.log("API Key:", import.meta.env.VITE_API_KEY);
+const socket = io(import.meta.env.VITE_API_KEY);
 export default socket;  
