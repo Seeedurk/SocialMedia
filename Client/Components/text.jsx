@@ -6,6 +6,10 @@ import socket from './Socket.js';
 function text(props) {
     const exploded = useRef(false);
     const [Posts, setPosts] = useState([
+        {
+            user: "Developer",
+            text: "Loading..."
+        }
     ]);
 
 
@@ -14,6 +18,7 @@ function text(props) {
 
         const responseHandler = (posts) => {
             if (!exploded.current) {
+                setPosts([]);
                 setPosts(prev => [...prev, ...JSON.parse(posts)]);
                 exploded.current = true;
             }
