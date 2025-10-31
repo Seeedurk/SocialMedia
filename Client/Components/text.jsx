@@ -7,8 +7,8 @@ function text(props) {
     const exploded = useRef(false);
     const [Posts, setPosts] = useState([
         {
-            user: "Developer",
-            text: "Loading..."
+            user: "Loading...",
+            text: "If you're seeing this, the backend probably shut down after some inactivity, so give it time to start up again to load the posts!"
         }
     ]);
 
@@ -48,10 +48,6 @@ function text(props) {
         <div className='div-text'>
 
             <NewPost user={props.user}  setPosts={setPosts} />
-
-            <div className="text">
-                The backend winds down after some time, so give it time to start up again if posts aren't showing up
-            </div>
 
             {Posts.map(post => (
                 <div className="text">
